@@ -20,26 +20,26 @@ def main(algo, seed):
     target_kl = 0.01
     cost_lim = 25
 
-    # # Prepare Logger
-    # logger_kwargs = setup_logger_kwargs(exp_name, seed)
+    # Prepare Logger
+    logger_kwargs = setup_logger_kwargs(exp_name, seed)
 
-    # # Algo and Env
-    # algo = eval("safe_rl." + algo)
-    # env_name = "gym_turtle2d:turtle2d-v0"
+    # Algo and Env
+    algo = eval("safe_rl." + algo)
+    env_name = "gym_turtle2d:turtle2d-v0"
 
-    # algo(
-    #     env_fn=lambda: gym.make(env_name),
-    #     ac_kwargs=dict(
-    #         hidden_sizes=(256, 256),
-    #     ),
-    #     epochs=epochs,
-    #     steps_per_epoch=steps_per_epoch,
-    #     save_freq=save_freq,
-    #     target_kl=target_kl,
-    #     cost_lim=cost_lim,
-    #     seed=seed,
-    #     logger_kwargs=logger_kwargs,
-    # )
+    algo(
+        env_fn=lambda: gym.make(env_name),
+        ac_kwargs=dict(
+            hidden_sizes=(256, 256),
+        ),
+        epochs=epochs,
+        steps_per_epoch=steps_per_epoch,
+        save_freq=save_freq,
+        target_kl=target_kl,
+        cost_lim=cost_lim,
+        seed=seed,
+        logger_kwargs=logger_kwargs,
+    )
 
 
 if __name__ == "__main__":
