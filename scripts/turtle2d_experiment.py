@@ -39,6 +39,7 @@ def main(algo, seed):
         cost_lim=cost_lim,
         seed=seed,
         logger_kwargs=logger_kwargs,
+        # render=True,
     )
 
 
